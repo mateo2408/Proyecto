@@ -4,47 +4,43 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<h1 class="display-4">Create</h1>
 
-<h4>Grade</h4>
+<h4 class="mb-4">Grade</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-6">
         <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Estudiante" class="control-label"></label>
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+            <div class="mb-3">
+                <label asp-for="Estudiante" class="form-label"></label>
                 <input asp-for="Estudiante" class="form-control" />
                 <span asp-validation-for="Estudiante" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Materia" class="control-label"></label>
+
+            <div class="mb-3">
+                <label asp-for="Materia" class="form-label"></label>
                 <input asp-for="Materia" class="form-control" />
                 <span asp-validation-for="Materia" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Calificacion" class="control-label"></label>
+
+            <div class="mb-3">
+                <label asp-for="Calificacion" class="form-label"></label>
                 <input asp-for="Calificacion" class="form-control" />
                 <span asp-validation-for="Calificacion" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="FechaEvaluacion" class="control-label"></label>
+
+            <div class="mb-3">
+                <label asp-for="FechaEvaluacion" class="form-label"></label>
                 <input asp-for="FechaEvaluacion" class="form-control" />
                 <span asp-validation-for="FechaEvaluacion" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <button type="submit" class="btn btn-success">Create</button>
+
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-success">Guardar</button>
+                <a asp-action="Index" class="btn btn-outline-secondary">Cancelar</a>
             </div>
         </form>
     </div>
 </div>
-
-<div>
-    <a asp-action="Index" class="btn btn-secondary mt-2">Back to List</a>
-</div>
-
-<footer class="footer mt-auto py-3 bg-light">
-    <div class="container">
-        <span class="text-muted">© 2025 Proyecto Final - All rights reserved.</span>
-    </div>
-</footer>
