@@ -33,13 +33,18 @@
                 <span asp-validation-for="FechaEvaluacion" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <button type="submit" class="btn btn-success">Create</button>
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" class="btn btn-secondary mt-2">Back to List</a>
 </div>
 
+<footer class="footer mt-auto py-3 bg-light">
+    <div class="container">
+        <span class="text-muted">© 2025 Proyecto Final - All rights reserved.</span>
+    </div>
+</footer>

@@ -13,8 +13,23 @@ builder.Services.AddDbContext<NotaAcademicaContext>(options => options.UseSqlSer
 
 var app = builder.Build();
 
-// Map routes
-app.MapGet("/", () => "Hello World!");
+// Configure the HTTP request pipeline.
+if (!app.Environment.IsDevelopment())
+{
+    app.UseExceptionHandler("/Home/Error");
+    app.UseHsts();
+}
 
-// Run the application
+app.UseHttpsRedirection();
+app.UseStaticFiles();
+
+app.UseRouting();
+
+app.UseAuthorization();
+
+// Configure default route for MVC
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=NotaAcademica}/{action=Index}/{id?}");
+
 app.Run();
